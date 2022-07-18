@@ -1,18 +1,24 @@
 package com.essoft.spring.controller;
 
-import com.essoft.spring.model.User;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.essoft.spring.dto.User;
+import com.essoft.spring.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/user")
 public class UserController {
+    @Autowired
+    private UserService userService;
 
-    @PostMapping("/users")
+    @GetMapping("/users/{userId}")
+    public User getUserById(@PathVariable Long userId) {
+        return userService.getUserById(userId);
+    }
+
+  /*  @PostMapping("/users")
     public User saveUser(@RequestBody User user) {
         System.out.println("User saved!");
         user.setPassword("");
@@ -24,5 +30,5 @@ public class UserController {
         System.out.println("User saved!");
         users.forEach(user->user.setPassword(""));
         return users;
-    }
+    }*/
 }

@@ -1,4 +1,4 @@
-package com.essoft.spring.model;
+package com.essoft.spring.entity;
 
 public class User {
     private String name;
