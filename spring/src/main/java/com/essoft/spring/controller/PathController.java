@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/myController")
-public class MyController {
+public class PathController {
 
     @GetMapping("/message/{message}")
     public String getMessage(@PathVariable String message) {
