@@ -11,10 +11,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class ReaderController {
 
     @Autowired
-    @Qualifier("pdfFileReader")
+    //@Qualifier("pdfFileReader")
     private Reader reader;
 
+    @Autowired
+    @Qualifier("excelFileReader")
+    private Reader reader1;
+
     public String read() {
-        return this.reader.readFile();
+        return this.reader.readFile() + this. reader1.readFile();
     }
 }
