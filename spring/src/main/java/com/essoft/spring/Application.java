@@ -1,6 +1,7 @@
 package com.essoft.spring;
 
 import com.essoft.spring.entity.SecondClass;
+import com.essoft.spring.entity.WordFileReader;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -15,6 +16,11 @@ public class Application {
 	@Bean
 	public SecondClass getSecondClass() {
 		return new SecondClass();
+	}
+
+	@Bean
+	public WordFileReader getWordFileReader() {
+		return new WordFileReader();
 	}
 
 }
